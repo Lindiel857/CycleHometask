@@ -6,6 +6,7 @@ using namespace std;
 int main() {
     int a;
     cin >> a;
+    int counter = 0;
     for (int u = 0; u < a; u++) {
         int t;
         cin >> t;
@@ -15,8 +16,9 @@ int main() {
             i = i + j;
             j = i - j;
             if (i == t) {
-                cout << t << ' ';
+                counter += 1;
             }
         }
     }
+    cout << counter;
 }
