@@ -15,7 +15,7 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
             cairo_line_to(cr, 100 + 80 * i, 100 + 45*j);
             cairo_stroke_preserve(cr);
             cairo_fill(cr);
-            cairo_move_to(100 + 30 + 80 * i; 100 + 45*j);
+            cairo_move_to(cr, 100 + 30 + 80 * i, 100 + 45*j);
             cairo_line_to(cr, 130 + 80 * i, 140 + 45*j);
             cairo_line_to(cr, 130 + 80 * i + 25, 140 + 45*j);
             cairo_line_to(cr, 130 + 80 * i + 25, 100 + 45*j);
