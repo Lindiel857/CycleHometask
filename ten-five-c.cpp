@@ -5,11 +5,11 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
 {
     cairo_set_line_width (cr, 1);
     cairo_scale(cr, 1, 1);
-    int u = 0
+    int u = 0;
     
-    for (int j; j < 2; j++) {
-        cairo_move_to(cr, 100; 100 + 40*j);
-        for (int i; i < 8; i++) {
+    for (int j = 0; j < 2; j++) {
+        cairo_move_to(cr, 100, 100 + 40*j);
+        for (int i = 0; i < 8; i++) {
             int a = i + u;
             if (a % 2 == 0) {
                 cairo_line_to(cr, 120 + 20 * i, 100 + 20*j);
@@ -27,7 +27,7 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
                 cairo_line_to(cr, 100 + 20 * i, 120 + 20*j);
                 cairo_stroke_preserve(cr);
                 cairo_fill(cr);
-                cairo_move_to(100 + 20*i; 100 + 20*j);
+                cairo_move_to(cr, 100 + 20*i, 100 + 20*j);
             }
             if (a % 2 == 1) {
                 cairo_line_to(cr, 120 + 20 * i, 100 + 20*j);
@@ -45,7 +45,7 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
                 cairo_line_to(cr, 120 + 20 * i, 120 + 20*j);
                 cairo_stroke_preserve(cr);
                 cairo_fill(cr);
-                cairo_move_to(100 + 20*i; 100 + 20*j);
+                cairo_move_to(cr, 100 + 20*i, 100 + 20*j);
             }
         }
         u += 1;
