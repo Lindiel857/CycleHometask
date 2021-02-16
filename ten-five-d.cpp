@@ -5,23 +5,23 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
 {
     cairo_set_line_width (cr, 1);
     cairo_scale(cr, 1, 1);
-    int u = 0
+    int u = 0;
     
-    for (int j; j < 3; j++) {
-        cairo_move_to(cr, 100; 100 + 20*j);
-        for (int i; i < 6; i++) {
-            cairo_line_to(cr, 120 + 20 * i, 100 + 20*j);
-            cairo_line_to(cr, 120 + 20 * i, 140 + 20*j);
-            cairo_line_to(cr, 100 + 20 * i, 140 + 20*j);
-            cairo_line_to(cr, 100 + 20 * i, 100 + 20*j);
+    for (int j = 0; j < 3; j++) {
+        cairo_move_to(cr, 100, 100 + 40*j);
+        for (int i = 0; i < 6; i++) {
+            cairo_line_to(cr, 140 + 40 * i, 100 + 40*j);
+            cairo_line_to(cr, 140 + 40 * i, 140 + 40*j);
+            cairo_line_to(cr, 100 + 40 * i, 140 + 40*j);
+            cairo_line_to(cr, 100 + 40 * i, 100 + 40*j);
+            cairo_line_to(cr, 100 + 40 * i, 140 + 40*j);
             cairo_stroke(cr);
-            cairo_move_to(cr, 100 + 20 * i, 120 + 20*j);
-            cairo_line_to(cr, 120 + 20 * i, 100 + 20*j);
-            cairo_line_to(cr, 120 + 20 * i, 120 + 20*j);
-            cairo_line_to(cr, 100 + 20 * i, 120 + 20*j);
+            cairo_line_to(cr, 140 + 40 * i, 100 + 40*j);
+            cairo_line_to(cr, 140 + 40 * i, 140 + 40*j);
+            cairo_line_to(cr, 100 + 40 * i, 140 + 40*j);
             cairo_stroke_preserve(cr);
             cairo_fill(cr);
-            cairo_move_to(100 + 20*i; 100 + 20*j);
+            cairo_move_to(cr, 100 + 40*i, 100 + 40*j);
         }
     }
 }
