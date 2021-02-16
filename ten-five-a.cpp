@@ -6,7 +6,7 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
     cairo_set_line_width (cr, 1);
     cairo_scale(cr, 1, 1);
     cairo_move_to(cr, 100, 100);
-    
+
     for (int i = 0; i < 5; i++) {
         cairo_line_to(cr, 100 + 40 * i, 100);
         cairo_line_to(cr, 100 + 40 * i + 20, 80);
@@ -14,7 +14,7 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
         cairo_line_to(cr, 100 + 40 * i + 20, 120);
         cairo_stroke_preserve(cr);
         cairo_fill(cr);
-        cairo_move_to(100 + 40 + 40 * i; 100);
+        cairo_move_to(cr, 100 + 40 + 40 * i, 100);
     }
     cairo_move_to(cr, 100, 140);
     for (int i = 0; i < 5; i++) {
@@ -24,45 +24,27 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
         cairo_line_to(cr, 100 + 40 * i + 20, 160);
         cairo_stroke_preserve(cr);
         cairo_fill(cr);
-        cairo_move_to(100 + 40 + 40 * i; 140);
+        cairo_move_to(cr, 100 + 40 + 40 * i, 140);
     }
-    
-    
-    cairo_set_line_width (cr, 1);
-    cairo_scale(cr, 1, 1);
-    cairo_line_to(cr, 280, 100);
-    cairo_arc(cr, 160, 40, 60, 0.5*M_PI, M_PI);
-    cairo_stroke_preserve(cr);
-    cairo_scale(cr, 1, 4);
-    cairo_arc_negative(cr, 100, 30, 20, 1.5*M_PI, M_PI);
-    cairo_stroke_preserve(cr);
-    cairo_scale(cr, 4, 0.25);
-    cairo_arc(cr, 40, 120, 20, M_PI, 1.5*M_PI);
-    cairo_stroke_preserve(cr);
-    cairo_set_source_rgb(cr, 0.8, 0.2, 0);      
-    cairo_fill(cr); 
-    cairo_set_source_rgb(cr, 0, 0, 0);
-    cairo_scale(cr, 0.25, 1);
-    cairo_set_line_width (cr, 1);
 }
- 
+
 
 int main( int argc, char *argv[])
 {
-   
+
     gtk_init(&argc, &argv);
- 
+
     GtkWidget *window;
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_window_set_default_size(GTK_WINDOW(window), 800, 600);
     gtk_window_set_title(GTK_WINDOW(window), "Персонаж");
     gtk_container_set_border_width (GTK_CONTAINER (window), 10);
-    
+
     GtkWidget *vbox;
     vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
     gtk_container_add(GTK_CONTAINER (window), vbox);
- 
+
     GtkWidget *drawing_area;
     drawing_area = gtk_drawing_area_new();
 
@@ -73,5 +55,5 @@ int main( int argc, char *argv[])
     gtk_widget_show_all(window);
 
     gtk_main();
- 
+
 }
