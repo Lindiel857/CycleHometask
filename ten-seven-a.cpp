@@ -10,12 +10,13 @@ void on_draw_event (GtkWidget *widget, cairo_t *cr, gpointer data)
     cairo_line_to(cr, 200, 300);
     cairo_line_to(cr, 100, 300);
     cairo_line_to(cr, 100, 100);
-    int N;
-    cin >> N;
+    cairo_stroke(cr);
+    int N = 8;
     
     for (int i = 0; i < N; i++) {
         cairo_move_to(cr, 100, 100 + 200.0 * (i+1) / (N+1));
         cairo_line_to(cr, 200, 100 + 200.0 * (i+1) / (N+1));
+        cairo_stroke(cr);
     }
 }
  
